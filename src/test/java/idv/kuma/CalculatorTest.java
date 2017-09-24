@@ -21,7 +21,7 @@ import static org.mockito.Mockito.verify;
 public class CalculatorTest {
 
     @Test
-    public void add() throws Exception {
+    public void addPositive() throws Exception {
 
         // 1. Prepare data
         int a = 30;
@@ -35,6 +35,39 @@ public class CalculatorTest {
         Assert.assertEquals(90, result);
 
     }
+
+    @Test
+    public void addNegative() throws Exception {
+
+        // 1. Prepare data
+        int a = -30;
+        int b = -60;
+        Calculator myCalculator = new Calculator();
+
+        // 2. Run program
+        int result = myCalculator.add(a, b);
+
+        // 3. Check answer
+        Assert.assertEquals(-90, result);
+
+    }
+
+    @Test
+    public void addZero() throws Exception {
+
+        // 1. Prepare data
+        int a = 0;
+        int b = 0;
+        Calculator myCalculator = new Calculator();
+
+        // 2. Run program
+        int result = myCalculator.add(a, b);
+
+        // 3. Check answer
+        Assert.assertEquals(0, result);
+
+    }
+
 
     @Test
     public void addSendEmail() throws Exception {
